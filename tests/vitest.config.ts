@@ -9,7 +9,8 @@ export default defineConfig(({ mode }) => {
   let plugins = [Vue()];
   let alias: Record<string, string> = {
     'scope-ui': resolve('./node_modules/scope-ui/dist/v3/index.mjs'),
-    vue: resolve('./node_modules/vue/dist/vue.runtime.esm-browser.js')
+    vue: resolve('./node_modules/vue/dist/vue.runtime.esm-browser.js'),
+    '@vue/test-utils': resolve('./node_modules/@vue/test-utils/dist/vue-test-utils.esm-browser.js')
   };
   if (mode === 'test:2') {
     plugins = [Vue2()];

@@ -4,7 +4,7 @@
     "build": "node build.js"
   },
   "devDependencies": {
-    "@scope/components": "workspace:^0.0.0",
+    "@scope/components": "workspace:*",
     "@vitejs/plugin-vue": "^4.0.0",
     "vite": "^4.0.4",
     "vue": "^3.2.45",

@@ -29,7 +29,7 @@ importers:
     specifiers:
       '@scope/components': workspace:^0.0.0
       '@vitejs/plugin-vue': ^4.0.0
-      scope-ui: workspace:*
+      scope-ui: workspace:^0.0.1
       vite: ^4.0.4
       vue: ^3.2.45
       vue-demi: ^0.13.11

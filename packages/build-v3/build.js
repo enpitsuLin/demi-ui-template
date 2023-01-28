@@ -18,11 +18,5 @@ build({
       fileName: (format) => `index.${format === 'cjs' ? 'cjs' : 'mjs'}`,
       formats: ['cjs', 'es']
     }
-  },
-  resolve: {
-    alias: {
-      vue: resolve('./node_modules/vue/dist/vue.runtime.esm-browser.js'),
-      'vue-demi': '../node_modules/vue-demi/lib/v3/index.mjs'
-    }
   }
 });

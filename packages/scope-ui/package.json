@@ -1,8 +1,16 @@
 {
   "name": "scope-ui",
+  "version": "0.0.1",
   "main": "index.js",
   "module": "index.mjs",
-  "peerDependencies": {
-    "vue-demi": "latest"
+  "scripts": {
+    "postinstall": "node ./scripts/postinstall.js"
+  },
+  "bin": {
+    "vue-fix": "bin/vue-fix.js",
+    "vue-switch": "bin/vue-switch.js"
+  },
+  "devDependencies": {
+    "vue-demi": "^0.13.11"
   }
 }

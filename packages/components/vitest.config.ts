@@ -8,16 +8,16 @@ import Vue2 from '@vitejs/plugin-vue2';
 export default defineConfig(({ mode }) => {
   let plugins = [Vue()];
   let alias: Record<string, string> = {
-    'scope-ui': resolve('./node_modules/scope-ui/dist/v3/index.mjs'),
-    vue: resolve('./node_modules/vue/dist/vue.runtime.esm-browser.js'),
-    '@vue/test-utils': resolve('./node_modules/@vue/test-utils/dist/vue-test-utils.esm-browser.js')
+    'scope-ui': resolve('./node_modules/scope-ui/dist/v3/index.mjs')
   };
   if (mode === 'test:2') {
-    plugins = [Vue2()];
+    plugins = [Vue2({ compiler: require('vue2/compiler-sfc') })];
     alias = {
       'scope-ui': resolve('./node_modules/scope-ui/dist/v2/index.mjs'),
-      vue: resolve('./node_modules/vue2/dist/vue.esm.browser.js'),
-      '@vue/test-utils': resolve('./node_modules/@vue/test-utils-v2/dist/vue-test-utils.esm.js')
+      vue: require.resolve('vue2'),
+      '@vue/test-utils': resolve('./node_modules/@vue/test-utils-v2/dist/vue-test-utils.esm.js'),
+      '@vue/compiler-sfc': resolve('./node_modules/vue2/packages/compiler-sfc/dist/compiler-sfc.js'),
+      'vue-template-compiler': resolve('./node_modules/vue-template-compiler/build.js')
     };
   }
 

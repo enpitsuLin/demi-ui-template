@@ -8,7 +8,7 @@ importers:
     devDependencies:
       typescript: 4.9.4
 
-  packages/build-2.7:
+  packages/build-v2:
     specifiers:
       '@scope/components': workspace:^0.0.0
       '@vitejs/plugin-vue2': ^2.2.0
@@ -22,7 +22,7 @@ importers:
       vue: 2.7.14
       vue-demi: 0.13.11_vue@2.7.14
 
-  packages/build-3:
+  packages/build-v3:
     specifiers:
       '@scope/components': workspace:^0.0.0
       '@vitejs/plugin-vue': ^4.0.0
@@ -43,6 +43,9 @@ importers:
     devDependencies:
       vue: 3.2.45
       vue-demi: 0.13.11_vue@3.2.45
+
+  packages/scope-ui:
+    specifiers: {}
 
 packages:
 

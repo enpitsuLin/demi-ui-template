@@ -1,8 +1,14 @@
 {
   "name": "demi-ui-template",
+  "private": true,
   "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A universal ui library template for vue2 & 3",
+  "main": "n/a",
+  "homepage": "https://github.com/enpitsuLin/demi-ui-template#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/enpitsuLin/demi-ui-template"
+  },
   "scripts": {
     "build": "pnpm --filter \"./packages/build-*\" build"
   },

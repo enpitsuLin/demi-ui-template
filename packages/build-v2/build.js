@@ -12,7 +12,12 @@ build({
     rollupOptions: {
       external: ['vue', 'vue-demi']
     },
-    lib: { name: 'index', entry: require.resolve('@scope/components'), fileName: 'index' }
+    lib: {
+      name: 'index',
+      entry: require.resolve('@scope/components'),
+      fileName: (format) => `index.${format === 'cjs' ? 'cjs' : 'mjs'}`,
+      formats: ['cjs', 'es']
+    }
   },
   resolve: {
     alias: {

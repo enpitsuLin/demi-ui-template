@@ -9,5 +9,8 @@
     "vite": "^4.0.4",
     "vue": "^3.2.45",
     "vue-demi": "^0.13.11"
+  },
+  "dependencies": {
+    "scope-ui": "workspace:*"
   }
 }

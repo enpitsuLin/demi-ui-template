@@ -8,7 +8,7 @@ const require = createRequire(import.meta.url);
 build({
   plugins: [vue()],
   build: {
-    outDir: resolve('../../dist/v3'),
+    outDir: resolve(require.resolve('scope-ui'), '../dist/v3'),
     rollupOptions: {
       external: ['vue', 'vue-demi']
     },

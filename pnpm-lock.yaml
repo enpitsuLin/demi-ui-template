@@ -12,9 +12,12 @@ importers:
     specifiers:
       '@scope/components': workspace:^0.0.0
       '@vitejs/plugin-vue2': ^2.2.0
+      scope-ui: workspace:*
       vite: ^4.0.4
       vue: ^2.7.14
       vue-demi: ^0.13.11
+    dependencies:
+      scope-ui: link:../scope-ui
     devDependencies:
       '@scope/components': link:../components
       '@vitejs/plugin-vue2': 2.2.0_vite@4.0.4+vue@2.7.14
@@ -26,9 +29,12 @@ importers:
     specifiers:
       '@scope/components': workspace:^0.0.0
       '@vitejs/plugin-vue': ^4.0.0
+      scope-ui: workspace:*
       vite: ^4.0.4
       vue: ^3.2.45
       vue-demi: ^0.13.11
+    dependencies:
+      scope-ui: link:../scope-ui
     devDependencies:
       '@scope/components': link:../components
       '@vitejs/plugin-vue': 4.0.0_vite@4.0.4+vue@3.2.45

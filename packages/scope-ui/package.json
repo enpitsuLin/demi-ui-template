@@ -1,5 +1,8 @@
 {
   "name": "scope-ui",
   "main": "index.js",
-  "module": "index.mjs"
+  "module": "index.mjs",
+  "peerDependencies": {
+    "vue-demi": "latest"
+  }
 }

@@ -1,0 +1,16 @@
+{
+  "name": "@scope/components",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vue": "^3.2.45",
+    "vue-demi": "^0.13.11"
+  }
+}

@@ -8,5 +8,9 @@ export const libRoot = resolve(packagesRoot, 'demi-ui');
 
 export const buildRoot = resolve(workspace, 'internal', 'build');
 
-/** `/packages/demi-ui/dist` */
-export const buildOutput = resolve(libRoot, 'dist');
+/** `/dist` */
+export const buildOutput = resolve(workspace, 'dist');
+/** `/dist/demi-ui` */
+export const libOutput = resolve(buildOutput, 'demi-ui')
+
+export const libPackage = resolve(libRoot, 'package.json');

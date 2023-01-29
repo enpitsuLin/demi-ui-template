@@ -1,4 +1,4 @@
-import { buildOutput, componentsRoot } from '@demi-ui/build-utils';
+import { componentsRoot, libOutput } from '@demi-ui/build-utils';
 import Vue from '@vitejs/plugin-vue';
 import Vue2 from '@vitejs/plugin-vue2';
 import { resolve } from 'path';
@@ -19,8 +19,9 @@ const buildBundle = async (version: 2 | 3) => {
         formats: ['cjs', 'es'],
         fileName: (format) => `index.${format === 'cjs' ? 'cjs' : 'mjs'}`
       },
-      outDir: resolve(buildOutput, `v${version}`),
-      emptyOutDir: false
+      outDir: resolve(libOutput, 'dist', `v${version}`),
+      emptyOutDir: false,
+      sourcemap: true
     },
     plugins
   });

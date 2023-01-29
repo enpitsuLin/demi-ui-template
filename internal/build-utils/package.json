@@ -9,6 +9,8 @@
     "stub": "unbuild --stub"
   },
   "devDependencies": {
+    "@pnpm/find-workspace-packages": "^5.0.30",
+    "@pnpm/types": "^8.10.0",
     "@types/node": "^18.11.18",
     "unbuild": "^1.1.1"
   }

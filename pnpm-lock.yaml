@@ -24,6 +24,7 @@ importers:
       '@pnpm/logger': ^5.0.0
       '@rollup/plugin-commonjs': ^24.0.1
       '@rollup/plugin-node-resolve': ^15.0.1
+      '@types/fs-extra': ^11.0.1
       '@types/gulp': ^4.0.10
       '@types/node': ^18.11.18
       '@vitejs/plugin-vue': ^4.0.0
@@ -32,6 +33,7 @@ importers:
       consola: ^2.15.3
       esbuild: ^0.17.5
       fast-glob: ^3.2.12
+      fs-extra: ^11.1.0
       gulp: ^4.0.2
       rollup: ^3.12.0
       rollup-plugin-esbuild: ^5.0.0
@@ -46,6 +48,7 @@ importers:
       '@pnpm/logger': 5.0.0
       '@rollup/plugin-commonjs': 24.0.1_rollup@3.12.0
       '@rollup/plugin-node-resolve': 15.0.1_rollup@3.12.0
+      '@types/fs-extra': 11.0.1
       '@types/gulp': 4.0.10
       '@types/node': 18.11.18
       '@vitejs/plugin-vue': 4.0.0_vite@4.0.4+vue@3.2.45
@@ -54,6 +57,7 @@ importers:
       consola: 2.15.3
       esbuild: 0.17.5
       fast-glob: 3.2.12
+      fs-extra: 11.1.0
       gulp: 4.0.2
       rollup: 3.12.0
       rollup-plugin-esbuild: 5.0.0_xh5ziip2kh75funlguo4husgu4
@@ -2059,6 +2063,13 @@ packages:
     resolution: {integrity: sha512-Q5Vn3yjTDyCMV50TB6VRIbQNxSE4OmZR86VSbGaNpfUolm0iePBB4KdEEHmxoY5sT2+2DIvXW0rvMDP2nHZ4Mg==}
     dev: true
 
+  /@types/fs-extra/11.0.1:
+    resolution: {integrity: sha512-MxObHvNl4A69ofaTRU8DFqvgzzv8s9yRtaPPm5gud9HDNvpB3GPQFvNuTWAI59B9huVGV5jXYJwbCsmBsOGYWA==}
+    dependencies:
+      '@types/jsonfile': 6.1.1
+      '@types/node': 18.11.18
+    dev: true
+
   /@types/glob-stream/6.1.1:
     resolution: {integrity: sha512-AGOUTsTdbPkRS0qDeyeS+6KypmfVpbT5j23SN8UPG63qjKXNKjXn6V9wZUr8Fin0m9l8oGYaPK8b2WUMF8xI1A==}
     dependencies:
@@ -2083,6 +2094,12 @@ packages:
 
   /@types/http-cache-semantics/4.0.1:
     resolution: {integrity: sha512-SZs7ekbP8CN0txVG2xVRH6EgKmEm31BOxA07vkFaETzZz1xh+cbt8BcI0slpymvwhx5dlFnQG2rTlPVQn+iRPQ==}
+    dev: true
+
+  /@types/jsonfile/6.1.1:
+    resolution: {integrity: sha512-GSgiRCVeapDN+3pqA35IkQwasaCh/0YFH5dEF6S88iDvEn901DjOeH3/QPY+XYP1DFzDZPvIvfeEgk+7br5png==}
+    dependencies:
+      '@types/node': 18.11.18
     dev: true
 
   /@types/keyv/3.1.4:

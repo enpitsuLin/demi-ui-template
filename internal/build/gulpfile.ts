@@ -1,6 +1,15 @@
 import { series } from 'gulp';
-import { runTask } from './utils';
+import { createTask, runTask } from './utils';
+import { run } from './utils/process';
+import { mkdir } from 'fs-extra';
+import { libOutput } from '@demi-ui/build-utils';
 
-export default series(runTask('buildUniversalBundle'), runTask('buildUniversalModules'));
+export default series(
+  createTask('clean', () => run('pnpm run clean')),
+  createTask('createOutput', () => mkdir(libOutput, { recursive: true })),
+
+  runTask('buildUniversalBundle'),
+  runTask('buildUniversalModules')
+);
 
 export * from './tasks';

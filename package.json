@@ -10,7 +10,8 @@
     "url": "https://github.com/enpitsuLin/demi-ui-template"
   },
   "scripts": {
-    "build": "pnpm run -C internal/build start"
+    "build": "pnpm run -C internal/build start",
+    "clean": "rm -rf dist"
   },
   "keywords": [],
   "author": "",

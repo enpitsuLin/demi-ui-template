@@ -11,12 +11,11 @@ export default defineConfig(({ mode }) => {
     'scope-ui': resolve('./node_modules/scope-ui/dist/v3/index.mjs')
   };
   if (mode === 'test:2') {
-    plugins = [Vue2({ compiler: require('vue2/compiler-sfc') })];
+    plugins = [Vue2()];
     alias = {
       'scope-ui': resolve('./node_modules/scope-ui/dist/v2/index.mjs'),
       vue: require.resolve('vue2'),
       '@vue/test-utils': resolve('./node_modules/@vue/test-utils-v2/dist/vue-test-utils.esm.js'),
-      '@vue/compiler-sfc': resolve('./node_modules/vue2/packages/compiler-sfc/dist/compiler-sfc.js'),
       'vue-template-compiler': resolve('./node_modules/vue-template-compiler/build.js')
     };
   }

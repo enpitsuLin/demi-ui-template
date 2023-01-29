@@ -1,4 +1,4 @@
-import Button from './index.vue';
+import Button from '../index.vue';
 import { mount } from '@vue/test-utils';
 
 test('mount component', async () => {

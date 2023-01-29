@@ -1,0 +1,45 @@
+diff --git a/dist/index.cjs b/dist/index.cjs
+index 014f4e2e3117c7843857d71641e60478d4395a45..aafcb919c662c5cb9824d6a2d5dcb6dc1d568600 100644
+--- a/dist/index.cjs
++++ b/dist/index.cjs
+@@ -14,9 +14,9 @@ const fs__default = /*#__PURE__*/_interopDefaultLegacy(fs);
+ const path__default = /*#__PURE__*/_interopDefaultLegacy(path);
+ 
+ function resolveCompiler(root) {
+-  const compiler = tryRequire("vue/compiler-sfc", root) || tryRequire("vue/compiler-sfc");
++  const compiler = tryRequire("vue2/compiler-sfc", root) || tryRequire("vue2/compiler-sfc");
+   if (!compiler) {
+-    throw new Error(`Failed to resolve vue/compiler-sfc.
++    throw new Error(`Failed to resolve vue2/compiler-sfc.
+ @vitejs/plugin-vue2 requires vue (>=2.7.0) to be present in the dependency tree.`);
+   }
+   return compiler;
+diff --git a/dist/index.d.ts b/dist/index.d.ts
+index edc2718729877b7811c4dd61bc905823705fa61e..79a05785def12e1d3a135fac46727cd312eae7bc 100644
+--- a/dist/index.d.ts
++++ b/dist/index.d.ts
+@@ -1,6 +1,6 @@
+ import { ViteDevServer, Plugin } from 'vite';
+-import * as _compiler from 'vue/compiler-sfc';
+-import { SFCScriptCompileOptions, SFCTemplateCompileOptions, SFCStyleCompileOptions } from 'vue/compiler-sfc';
++import * as _compiler from 'vue2/compiler-sfc';
++import { SFCScriptCompileOptions, SFCTemplateCompileOptions, SFCStyleCompileOptions } from 'vue2/compiler-sfc';
+ 
+ interface VueQuery {
+     vue?: boolean;
+diff --git a/dist/index.mjs b/dist/index.mjs
+index 984a2f0063eb0a1af50dda3102c416ecbee4efac..3568390553c22475998adfb55dff3df856a117e5 100644
+--- a/dist/index.mjs
++++ b/dist/index.mjs
+@@ -5,9 +5,9 @@ import path from 'node:path';
+ import { createHash } from 'node:crypto';
+ 
+ function resolveCompiler(root) {
+-  const compiler = tryRequire("vue/compiler-sfc", root) || tryRequire("vue/compiler-sfc");
++  const compiler = tryRequire("vue2/compiler-sfc", root) || tryRequire("vue2/compiler-sfc");
+   if (!compiler) {
+-    throw new Error(`Failed to resolve vue/compiler-sfc.
++    throw new Error(`Failed to resolve vue2/compiler-sfc.
+ @vitejs/plugin-vue2 requires vue (>=2.7.0) to be present in the dependency tree.`);
+   }
+   return compiler;

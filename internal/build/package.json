@@ -1,0 +1,23 @@
+{
+  "name": "@demi-ui/build",
+  "scripts": {
+    "start": "gulp --require @esbuild-kit/cjs-loader -f gulpfile.ts"
+  },
+  "devDependencies": {
+    "@esbuild-kit/cjs-loader": "^2.4.1",
+    "@types/gulp": "^4.0.10",
+    "@types/node": "^18.11.18",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vitejs/plugin-vue2": "^2.2.0",
+    "chalk": "^5.2.0",
+    "consola": "^2.15.3",
+    "esbuild": "^0.17.5",
+    "gulp": "^4.0.2",
+    "vue": "^3.2.45",
+    "vue2": "npm:vue@^2.7.14"
+  },
+  "dependencies": {
+    "@demi-ui/build-utils": "workspace:*",
+    "vite": "^4.0.4"
+  }
+}

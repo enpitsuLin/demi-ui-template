@@ -1,9 +1,10 @@
-import { buildOutput, componentsRoot, excludeFiles, libOutput, libRoot } from '@demi-ui/build-utils';
+import { componentsRoot, excludeFiles, libOutput, libRoot } from '@demi-ui/build-utils';
 import commonjs from '@rollup/plugin-commonjs';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import vue from '@vitejs/plugin-vue';
 import vue2 from '@vitejs/plugin-vue2';
 import glob from 'fast-glob';
+import { TaskFunction } from 'gulp';
 import { resolve } from 'path';
 import { rollup } from 'rollup';
 import esbuild from 'rollup-plugin-esbuild';
@@ -57,6 +58,6 @@ const buildModules = async (version: 2 | 3) => {
   ]);
 };
 
-export const buildUniversalModules = createTask('buildUniversalModules', () =>
+export const buildUniversalModules: TaskFunction = createTask('buildUniversalModules', () =>
   Promise.all([buildModules(2), buildModules(3)])
 );

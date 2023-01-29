@@ -33,8 +33,7 @@
     "vue-demi": "^0.13.11"
   },
   "peerDependencies": {
-    "vue": ">=3.0.0 || >=2.7.0",
-    "vue-demi": "latest"
+    "vue": ">=3.0.0 || >=2.7.0"
   },
   "dependencies": {
     "fs-extra": "^11.1.0",

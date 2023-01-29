@@ -4,6 +4,7 @@
     "start": "gulp --require @esbuild-kit/cjs-loader -f gulpfile.ts"
   },
   "devDependencies": {
+    "@demi-ui/tsconfig": "workspace:^0.0.0",
     "@esbuild-kit/cjs-loader": "^2.4.1",
     "@pnpm/logger": "^5.0.0",
     "@rollup/plugin-commonjs": "^24.0.1",

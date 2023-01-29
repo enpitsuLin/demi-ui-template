@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Browser Library",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "target": "ES2018",
+    "module": "ESNext",
+    "lib": ["ES2018", "DOM", "DOM.Iterable"],
+    "jsx": "preserve"
+  }
+}

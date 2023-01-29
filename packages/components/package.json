@@ -11,6 +11,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@demi-ui/tsconfig": "workspace:^0.0.0",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitejs/plugin-vue2": "^2.2.0",
     "@vue/test-utils": "^2.2.8",

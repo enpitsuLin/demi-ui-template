@@ -20,6 +20,7 @@ importers:
   internal/build:
     specifiers:
       '@demi-ui/build-utils': workspace:*
+      '@demi-ui/tsconfig': workspace:^0.0.0
       '@esbuild-kit/cjs-loader': ^2.4.1
       '@pnpm/logger': ^5.0.0
       '@rollup/plugin-commonjs': ^24.0.1
@@ -44,6 +45,7 @@ importers:
       '@demi-ui/build-utils': link:../build-utils
       vite: 4.0.4_@types+node@18.11.18
     devDependencies:
+      '@demi-ui/tsconfig': link:../tsconfig
       '@esbuild-kit/cjs-loader': 2.4.1
       '@pnpm/logger': 5.0.0
       '@rollup/plugin-commonjs': 24.0.1_rollup@3.12.0
@@ -66,11 +68,13 @@ importers:
 
   internal/build-utils:
     specifiers:
+      '@demi-ui/tsconfig': workspace:^0.0.0
       '@pnpm/find-workspace-packages': ^5.0.30
       '@pnpm/types': ^8.10.0
       '@types/node': ^18.11.18
       unbuild: ^1.1.1
     devDependencies:
+      '@demi-ui/tsconfig': link:../tsconfig
       '@pnpm/find-workspace-packages': 5.0.30
       '@pnpm/types': 8.10.0
       '@types/node': 18.11.18
@@ -78,6 +82,7 @@ importers:
 
   packages/components:
     specifiers:
+      '@demi-ui/tsconfig': workspace:^0.0.0
       '@vitejs/plugin-vue': ^4.0.0
       '@vitejs/plugin-vue2': ^2.2.0
       '@vue/test-utils': ^2.2.8
@@ -90,6 +95,7 @@ importers:
       vue-template-compiler: 2.7.14
       vue2: npm:vue@^2.7.14
     devDependencies:
+      '@demi-ui/tsconfig': link:../../internal/tsconfig
       '@vitejs/plugin-vue': 4.0.0_vite@4.0.4+vue@3.2.45
       '@vitejs/plugin-vue2': 2.2.0_mkrlmbrx3jd4gwvhkxvqqmyb5y_vite@4.0.4+vue@3.2.45
       '@vue/test-utils': 2.2.8_vue@3.2.45
@@ -2181,7 +2187,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.0.4_@types+node@18.11.18
+      vite: 4.0.4
       vue: 3.2.45
     dev: true
 
@@ -2192,7 +2198,7 @@ packages:
       vite: ^3.0.0 || ^4.0.0
       vue: ^2.7.0-0
     dependencies:
-      vite: 4.0.4_@types+node@18.11.18
+      vite: 4.0.4
       vue: 3.2.45
     dev: true
     patched: true
@@ -7237,7 +7243,6 @@ packages:
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
-    dev: true
 
   /rollup/3.12.0:
     resolution: {integrity: sha512-4MZ8kA2HNYahIjz63rzrMMRvDqQDeS9LoriJvMuV0V6zIGysP36e9t4yObUfwdT9h/szXoHQideICftcdZklWg==}
@@ -7245,6 +7250,7 @@ packages:
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
 
   /run-groups/3.0.1:
     resolution: {integrity: sha512-2hIL01Osd6FWsQVhVGqJ7drNikmTaUg2A/VBR98+LuhQ1jV1Xlh43BQH4gJiNaOzfHJTasD0pw5YviIfdVVY4g==}
@@ -8406,7 +8412,7 @@ packages:
       esbuild: 0.16.17
       postcss: 8.4.21
       resolve: 1.22.1
-      rollup: 3.12.0
+      rollup: 3.11.0
     optionalDependencies:
       fsevents: 2.3.2
 

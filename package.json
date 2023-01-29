@@ -11,7 +11,10 @@
   },
   "scripts": {
     "build": "pnpm run -C internal/build start",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "test": "pnpm run test:2 && pnpm run test:3",
+    "test:2": "pnpm run -C packages/components test:2 --run",
+    "test:3": "pnpm run -C packages/components test:3 --run"
   },
   "keywords": [],
   "author": "",

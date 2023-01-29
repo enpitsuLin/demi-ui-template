@@ -1,6 +1,5 @@
 {
   "extends": "@demi-ui/tsconfig/browser.json",
-  "compilerOptions": {
-    "types": ["vitest/globals"]
-  }
+  "include": ["index.ts", "**/*.ts"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -1,0 +1,8 @@
+{
+  "extends": "@demi-ui/tsconfig/node.json",
+  "compilerOptions": {
+    "composite": true,
+    "types": ["vitest/globals"]
+  },
+  "include": ["**/__test__/*.spec.ts", "vitest.config.ts", "vite-env.d.ts"]
+}

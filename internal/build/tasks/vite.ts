@@ -26,4 +26,6 @@ const buildBundle = async (version: 2 | 3) => {
   });
 };
 
-export const buildBothBundle = createTask('buildBothBundle', () => Promise.all([buildBundle(2), buildBundle(3)]));
+export const buildUniversalBundle = createTask('buildUniversalBundle', () =>
+  Promise.all([buildBundle(2), buildBundle(3)])
+);

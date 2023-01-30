@@ -1,8 +1,8 @@
 {
-  "name": "@scope/components",
-  "version": "0.0.0",
+  "name": "@demi-ui/components",
+  "private": true,
   "description": "",
-  "main": "index.ts",
+  "main": "n/a",
   "scripts": {
     "test:2": "vue-demi-switch 2.7 vue2 && vitest --mode test:2",
     "test:3": "vue-demi-switch 3 && vitest --mode test:3",
@@ -13,7 +13,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@demi-ui/tsconfig": "workspace:^0.0.0",
+    "@demi-ui/tsconfig": "workspace:*",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitejs/plugin-vue2": "^2.2.0",
     "@vue/test-utils": "^2.2.8",

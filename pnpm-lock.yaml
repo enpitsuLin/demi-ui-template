@@ -36,7 +36,7 @@ importers:
   internal/build:
     specifiers:
       '@demi-ui/build-utils': workspace:*
-      '@demi-ui/tsconfig': workspace:^0.0.0
+      '@demi-ui/tsconfig': workspace:*
       '@esbuild-kit/cjs-loader': ^2.4.1
       '@pnpm/logger': ^5.0.0
       '@rollup/plugin-commonjs': ^24.0.1
@@ -84,7 +84,7 @@ importers:
 
   internal/build-utils:
     specifiers:
-      '@demi-ui/tsconfig': workspace:^0.0.0
+      '@demi-ui/tsconfig': workspace:*
       '@pnpm/find-workspace-packages': ^5.0.30
       '@pnpm/logger': ^5.0.0
       '@pnpm/types': ^8.10.0
@@ -127,7 +127,7 @@ importers:
 
   packages/components:
     specifiers:
-      '@demi-ui/tsconfig': workspace:^0.0.0
+      '@demi-ui/tsconfig': workspace:*
       '@vitejs/plugin-vue': ^4.0.0
       '@vitejs/plugin-vue2': ^2.2.0
       '@vue/test-utils': ^2.2.8

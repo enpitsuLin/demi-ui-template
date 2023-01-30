@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@demi-ui/build-utils": "workspace:*",
-    "vite": "^4.0.4"
+    "vite": "^4.0.4",
+    "vue-demi": "^0.13.11"
   }
 }

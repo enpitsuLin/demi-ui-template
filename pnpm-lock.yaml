@@ -9,10 +9,12 @@ importers:
 
   .:
     specifiers:
+      rimraf: ^4.1.2
       typescript: ^4.9.4
       vue: ^3.2.45
       vue2: npm:vue@^2.7.14
     devDependencies:
+      rimraf: 4.1.2
       typescript: 4.9.4
       vue: 3.2.45
       vue2: /vue/2.7.14
@@ -7245,6 +7247,12 @@ packages:
     hasBin: true
     dependencies:
       glob: 7.2.3
+    dev: true
+
+  /rimraf/4.1.2:
+    resolution: {integrity: sha512-BlIbgFryTbw3Dz6hyoWFhKk+unCcHMSkZGrTFVAx2WmttdBSonsdtRlwiuTbDqTKr+UlXIUqJVS4QT5tUzGENQ==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: true
 
   /rollup-plugin-dts/5.1.1_yjrzni4zyr7xhg3xsvmmijxnvu:

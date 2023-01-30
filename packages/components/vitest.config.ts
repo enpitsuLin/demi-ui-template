@@ -30,7 +30,6 @@ export default defineConfig(({ mode }) => {
   return {
     plugins,
     test: {
-      globals: true,
       environment: 'jsdom',
     },
     resolve: { alias },

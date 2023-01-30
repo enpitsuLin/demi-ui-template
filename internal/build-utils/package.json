@@ -1,5 +1,6 @@
 {
   "name": "@demi-ui/build-utils",
+  "private": true,
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./src/index.ts",

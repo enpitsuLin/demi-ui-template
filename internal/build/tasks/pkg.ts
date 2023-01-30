@@ -1,6 +1,11 @@
-import { componentsRoot, libOutput, libRoot } from '@demi-ui/build-utils'
-import { copySync, readdir } from 'fs-extra'
-import path, { basename } from 'path'
+import {
+  componentsRoot,
+  libOutput,
+  libPackage,
+  libRoot,
+} from '@demi-ui/build-utils'
+import { copySync, readdir, readJSON, outputJson } from 'fs-extra'
+import path from 'path'
 import glob from 'fast-glob'
 
 const ignorePath = ['node_modules', 'release']
@@ -29,10 +34,23 @@ export const copyFullStyle = async () => {
         path.resolve(
           libOutput,
           'styles',
-          basename(fpath, 'css'),
-          basename(fpath)
+          path.basename(fpath, 'css'),
+          path.basename(fpath)
         ),
       ])
       .map(([src, dest]) => copySync(src, dest))
   )
+}
+
+export const writePackages = async () => {
+  const content = await readJSON(libPackage)
+  content.scripts = {
+    ...content.scripts,
+    postinstall: 'node ./scripts/postinstall.js',
+  }
+  delete content.publishConfig.directory
+  await outputJson(path.resolve(libOutput, 'package.json'), content, {
+    EOL: '\n',
+    spaces: 2,
+  })
 }

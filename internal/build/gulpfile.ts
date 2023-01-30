@@ -8,7 +8,11 @@ export default series(
   createTask('clean', () => run('pnpm run clean')),
   createTask('createOutput', () => mkdir(libOutput, { recursive: true })),
 
-  parallel(runTask('buildUniversalBundle'), runTask('buildUniversalModules')),
+  parallel(
+    runTask('buildUniversalBundle'),
+    runTask('buildUniversalModules'),
+    createTask('buildTypeDefinition', () => run('pnpm run build:type'))
+  ),
   runTask('copyFiles')
 );
 

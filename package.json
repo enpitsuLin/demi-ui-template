@@ -11,10 +11,12 @@
   },
   "scripts": {
     "build": "pnpm run -C internal/build start",
+    "build:type": "pnpm run -C packages/components type",
     "clean": "rm -rf dist",
     "test": "pnpm run test:2 && pnpm run test:3",
     "test:2": "pnpm run -C packages/components test:2 --run",
-    "test:3": "pnpm run -C packages/components test:3 --run"
+    "test:3": "pnpm run -C packages/components test:3 --run",
+    "typecheck": "pnpm run -C packages/components typecheck"
   },
   "keywords": [],
   "author": "",

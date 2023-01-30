@@ -2,8 +2,6 @@
   "extends": "./tsconfig.json",
   "include": ["index.ts", "**/*.ts"],
   "compilerOptions": {
-    "declaration": true,
-    "emitDeclarationOnly": true,
     "outDir": "../../dist/demi-ui/types/"
   },
   "exclude": ["dist", "**/__test__", "vitest.config.ts"]

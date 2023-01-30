@@ -1,6 +1,5 @@
 {
   "extends": "@demi-ui/tsconfig/browser.json",
   "include": ["index.ts", "**/*.ts", "**/*.vue"],
-  "exclude": ["dist", "**/__test__"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "exclude": ["dist"]
 }

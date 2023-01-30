@@ -14,7 +14,8 @@ export default series(
     runTask('copyFullStyle'),
     createTask('buildTypeDefinition', () => run('pnpm run build:type'))
   ),
-  runTask('copyFiles')
+  runTask('copyFiles'),
+  runTask('writePackages')
 )
 
 export * from './tasks'

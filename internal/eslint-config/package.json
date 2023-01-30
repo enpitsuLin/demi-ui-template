@@ -2,6 +2,7 @@
   "name": "@demi-ui/eslint-config",
   "//": "or you want publish this change to true",
   "private": true,
+  "version": "0.0.1",
   "main": "index.js",
   "publishConfig": {
     "access": "public"

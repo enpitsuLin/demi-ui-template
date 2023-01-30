@@ -1,6 +1,7 @@
 {
   "name": "@demi-ui/tsconfig",
   "private": true,
+  "version": "0.0.1",
   "license": "MIT",
   "publishConfig": {
     "access": "public"

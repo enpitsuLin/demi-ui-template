@@ -1,6 +1,7 @@
 {
   "name": "@demi-ui/components",
   "private": true,
+  "version": "0.0.1",
   "description": "",
   "main": "n/a",
   "scripts": {

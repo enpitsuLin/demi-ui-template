@@ -34,7 +34,7 @@ export const copyFullStyle = async () => {
         path.resolve(
           libOutput,
           'styles',
-          path.basename(fpath, 'css'),
+          path.basename(fpath, '.css'),
           path.basename(fpath)
         ),
       ])

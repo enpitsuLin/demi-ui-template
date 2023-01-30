@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "test:2": "vue-demi-switch 2.7 vue2 & vitest --mode test:2",
-    "test:3": "vue-demi-switch 3 &vitest --mode test:3",
+    "test:2": "vue-demi-switch 2.7 vue2 && vitest --mode test:2",
+    "test:3": "vue-demi-switch 3 && vitest --mode test:3",
     "type": "vue-tsc -p tsconfig.build.json --declaration --emitDeclarationOnly",
     "typecheck": "vue-tsc -p tsconfig.build.json --noEmit"
   },

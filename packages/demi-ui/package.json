@@ -10,10 +10,12 @@
   ],
   "main": "lib/v{{version}}/index.js",
   "module": "es/v{{version}}/index.mjs",
+  "types": "types/index.d.ts",
   "exports": {
     ".": {
       "import": "./es/v{{version}}/index.mjs",
-      "require": "./lib/v{{version}}/index.js"
+      "require": "./lib/v{{version}}/index.js",
+      "types": "./types/index.d.ts"
     },
     "./es": "./es/v{{version}}/index.mjs",
     "./lib": "./lib/v{{version}}/index.js",
@@ -29,14 +31,12 @@
   "scripts": {
     "postinstall": "node ./scripts/postinstall.js"
   },
-  "devDependencies": {
-    "vue-demi": "^0.13.11"
-  },
   "peerDependencies": {
     "vue": ">=3.0.0 || >=2.7.0"
   },
   "dependencies": {
     "fs-extra": "^11.1.0",
-    "mustache": "^4.2.0"
+    "mustache": "^4.2.0",
+    "vue-demi": "^0.13.11"
   }
 }

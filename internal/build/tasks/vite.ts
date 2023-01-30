@@ -12,7 +12,7 @@ const buildBundle = async (version: 2 | 3) => {
   return build({
     build: {
       rollupOptions: {
-        external: ['vue'],
+        external: ['vue', 'vue-demi'],
         treeshake: true
       },
       lib: {

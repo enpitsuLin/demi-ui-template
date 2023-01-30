@@ -34,7 +34,8 @@ const buildModules = async (version: 2 | 3) => {
         }
       })
     ],
-    external: ['vue']
+    external: ['vue', 'vue-demi'],
+    treeshake: false
   });
   await writeBundles(bundle, [
     {

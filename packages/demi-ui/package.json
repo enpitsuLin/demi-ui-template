@@ -29,7 +29,7 @@
     "access": "public"
   },
   "scripts": {
-    "postinstall": "node ./scripts/postinstall.js"
+    "clean": "rm -rf release"
   },
   "peerDependencies": {
     "vue": ">=3.0.0 || >=2.7.0"

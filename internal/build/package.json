@@ -1,5 +1,6 @@
 {
   "name": "@demi-ui/build",
+  "private": true,
   "scripts": {
     "start": "gulp --require @esbuild-kit/cjs-loader -f gulpfile.ts"
   },

@@ -3,8 +3,12 @@ import { copySync, readdir } from 'fs-extra'
 import path, { basename } from 'path'
 import glob from 'fast-glob'
 
+const ignorePath = ['node_modules', 'release']
+
 export const copyFiles = async () => {
-  const files = await readdir(libRoot)
+  const files = (await readdir(libRoot)).filter(
+    (p) => !ignorePath.some((ip) => p.includes(ip))
+  )
 
   return Promise.all(
     files.map((file) =>

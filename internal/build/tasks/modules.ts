@@ -26,7 +26,7 @@ const buildModules = async (version: 2 | 3) => {
   const bundle = await rollup({
     input,
     plugins: [
-      (version === 2 ? vue2 : vue)({ isProduction: false }),
+      (version === 2 ? vue2 : vue)({ isProduction: true }),
       nodeResolve({
         extensions: ['.mjs', '.js', '.json', '.ts'],
       }),

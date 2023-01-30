@@ -18,7 +18,7 @@ import { createTask, writeBundles } from '../utils'
 const buildModules = async (version: 2 | 3) => {
   const input = excludeFiles(
     await glob('**/*.{js,ts,vue}', {
-      cwd: componentsRoot,
+      cwd: resolve(componentsRoot, 'src'),
       absolute: true,
       onlyFiles: true,
     })

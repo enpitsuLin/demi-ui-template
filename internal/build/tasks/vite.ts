@@ -16,7 +16,7 @@ const buildBundle = async (version: 2 | 3) => {
         treeshake: true,
       },
       lib: {
-        entry: resolve(componentsRoot, 'index.ts'),
+        entry: resolve(componentsRoot, 'src', 'index.ts'),
         formats: ['cjs', 'es'],
         fileName: (format) => `index.${format === 'cjs' ? 'cjs' : 'mjs'}`,
       },

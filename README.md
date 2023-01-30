@@ -3,6 +3,10 @@
 <p align="center">_Once development, Use in both Vue 2.7 & Vue3_
 </p>
 
+<p align='center'>
+<b>English</b> | <a href="./README.zh-CN.md">简体中文</a>
+</p>
+
 ## Motivation
 
 Although a long time has passed since Vue 3 announced, there are also many developer still stay on vue2 because dependency compatibly, browser support requirements, or other reasons.

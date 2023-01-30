@@ -24,7 +24,9 @@
     "test": "pnpm run test:2 && pnpm run test:3",
     "test:2": "pnpm run -C packages/components test:2 --run",
     "test:3": "pnpm run -C packages/components test:3 --run",
-    "typecheck": "pnpm run -C packages/components typecheck"
+    "typecheck": "pnpm run -C packages/components typecheck",
+    "version": "pnpm changeset version",
+    "release": "pnpm changeset publish"
   },
   "keywords": [],
   "author": "enpitsulin <enpitsulin@gmail.com>",

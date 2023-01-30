@@ -2,3 +2,4 @@ packages:
   - 'packages/*'
   - 'test'
   - 'internal/*'
+  - '!packages/demi-ui'

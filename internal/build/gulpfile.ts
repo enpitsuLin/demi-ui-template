@@ -1,4 +1,4 @@
-import { series } from 'gulp';
+import { parallel, series } from 'gulp';
 import { createTask, runTask } from './utils';
 import { run } from './utils/process';
 import { mkdir } from 'fs-extra';
@@ -8,8 +8,8 @@ export default series(
   createTask('clean', () => run('pnpm run clean')),
   createTask('createOutput', () => mkdir(libOutput, { recursive: true })),
 
-  runTask('buildUniversalBundle'),
-  runTask('buildUniversalModules')
+  parallel(runTask('buildUniversalBundle'), runTask('buildUniversalModules')),
+  runTask('copyFiles')
 );
 
 export * from './tasks';

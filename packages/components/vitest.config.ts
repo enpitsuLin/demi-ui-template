@@ -31,6 +31,7 @@ export default defineConfig(({ mode }) => {
     plugins,
     test: {
       environment: 'jsdom',
+      setupFiles: ['./setup.ts'],
     },
     resolve: { alias },
   }

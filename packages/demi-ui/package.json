@@ -1,6 +1,6 @@
 {
   "name": "demi-ui",
-  "version": "0.0.1-test.2",
+  "version": "0.0.1",
   "description": "A Universal UI library for Vue 2.7 & 3",
   "keywords": [
     "component library",

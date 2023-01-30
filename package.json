@@ -14,7 +14,8 @@
     "url": "https://github.com/enpitsuLin/demi-ui-template"
   },
   "scripts": {
-    "postinstall": "npx only-allow pnpm",
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "husky install",
     "build": "pnpm run -C internal/build start",
     "build:type": "pnpm run -C packages/components type",
     "format": "prettier --write --cache .",
@@ -29,8 +30,11 @@
   "author": "enpitsulin <enpitsulin@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
     "@demi-ui/eslint-config": "workspace:*",
     "eslint": "^8.33.0",
+    "husky": "^8.0.3",
     "prettier": "^2.8.3",
     "rimraf": "^4.1.2",
     "typescript": "^4.9.4",

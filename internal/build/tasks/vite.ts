@@ -1,7 +1,9 @@
 import { componentsRoot, libOutput } from '@demi-ui/build-utils'
 import Vue from '@vitejs/plugin-vue'
 import Vue2 from '@vitejs/plugin-vue2'
-import { TaskFunction } from 'gulp'
+import concat from 'gulp-concat'
+import minfycss from 'gulp-minify-css'
+import { TaskFunction, src, dest } from 'gulp'
 import { resolve } from 'path'
 import { build, type Plugin } from 'vite'
 import { createTask } from '../utils'
@@ -21,6 +23,7 @@ const buildBundle = async (version: 2 | 3) => {
         external: ['vue'],
         treeshake: true,
         output: {
+          exports: 'named',
           globals: {
             vue: 'Vue',
           },
@@ -44,7 +47,14 @@ const buildBundle = async (version: 2 | 3) => {
   })
 }
 
+const buildBundleStyle = async () => {
+  src('**/*.css', { cwd: componentsRoot, absolute: true })
+    .pipe(concat('style.css'))
+    .pipe(minfycss())
+    .pipe(dest(resolve(libOutput, 'dist')))
+}
+
 export const buildUniversalBundle: TaskFunction = createTask(
   'buildUniversalBundle',
-  () => Promise.all([buildBundle(2), buildBundle(3)])
+  () => Promise.all([buildBundle(2), buildBundle(3), buildBundleStyle()])
 )

@@ -1,6 +1,6 @@
 # demi-ui-template
 
-<p align="center">_Once development, Use in both Vue 2.7 & Vue3_
+<p align="center">_Develop once, Use in both Vue 2.7 & Vue3_
 </p>
 
 <p align='center'>

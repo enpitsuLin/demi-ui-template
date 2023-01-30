@@ -19,7 +19,7 @@
     "build": "pnpm run -C internal/build start",
     "build:type": "pnpm run -C packages/components type",
     "format": "prettier --write --cache .",
-    "clean": "rm -rf dist",
+    "clean": "pnpm --parallel run clean",
     "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --max-warnings 0 --cache",
     "test": "pnpm run test:2 && pnpm run test:3",
     "test:2": "pnpm run -C packages/components test:2 --run",

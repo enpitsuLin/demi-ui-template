@@ -1,8 +1,8 @@
-import { parallel, series } from 'gulp';
-import { createTask, runTask } from './utils';
-import { run } from './utils/process';
-import { mkdir } from 'fs-extra';
-import { libOutput } from '@demi-ui/build-utils';
+import { parallel, series } from 'gulp'
+import { createTask, runTask } from './utils'
+import { run } from './utils/process'
+import { mkdir } from 'fs-extra'
+import { libOutput } from '@demi-ui/build-utils'
 
 export default series(
   createTask('clean', () => run('pnpm run clean')),
@@ -14,6 +14,6 @@ export default series(
     createTask('buildTypeDefinition', () => run('pnpm run build:type'))
   ),
   runTask('copyFiles')
-);
+)
 
-export * from './tasks';
+export * from './tasks'

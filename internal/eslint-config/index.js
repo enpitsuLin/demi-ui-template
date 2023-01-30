@@ -1,25 +1,29 @@
-const { defineConfig } = require('eslint-define-config');
+const { defineConfig } = require('eslint-define-config')
 
 module.exports = defineConfig({
   env: {
     es6: true,
     browser: true,
-    node: true
+    node: true,
   },
   plugins: ['@typescript-eslint', 'prettier'],
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+  ],
   overrides: [
     {
       files: ['*.ts', '*.vue'],
       rules: {
-        'no-undef': 'off'
-      }
+        'no-undef': 'off',
+      },
     },
     {
       files: ['**/__test__/**'],
       rules: {
-        'no-console': 'off'
-      }
+        'no-console': 'off',
+      },
     },
     {
       files: ['*.vue'],
@@ -29,18 +33,18 @@ module.exports = defineConfig({
         extraFileExtensions: ['.vue'],
         ecmaVersion: 'latest',
         ecmaFeatures: {
-          jsx: true
-        }
+          jsx: true,
+        },
       },
       rules: {
-        'no-undef': 'off'
-      }
+        'no-undef': 'off',
+      },
     },
     {
       files: ['*.js'],
       rules: {
-        '@typescript-eslint/no-var-requires': 'off'
-      }
-    }
-  ]
-});
+        '@typescript-eslint/no-var-requires': 'off',
+      },
+    },
+  ],
+})

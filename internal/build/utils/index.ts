@@ -1,2 +1,2 @@
-export * from './gulp';
+export * from './gulp'
 export * from './rollup'

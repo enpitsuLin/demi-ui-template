@@ -17,7 +17,9 @@
     "postinstall": "npx only-allow pnpm",
     "build": "pnpm run -C internal/build start",
     "build:type": "pnpm run -C packages/components type",
+    "format": "prettier --write --cache .",
     "clean": "rm -rf dist",
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --max-warnings 0 --cache",
     "test": "pnpm run test:2 && pnpm run test:3",
     "test:2": "pnpm run -C packages/components test:2 --run",
     "test:3": "pnpm run -C packages/components test:3 --run",
@@ -27,6 +29,9 @@
   "author": "enpitsulin <enpitsulin@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@demi-ui/eslint-config": "workspace:*",
+    "eslint": "^8.33.0",
+    "prettier": "^2.8.3",
     "rimraf": "^4.1.2",
     "typescript": "^4.9.4",
     "vue": "^3.2.45",
@@ -35,6 +40,12 @@
   "pnpm": {
     "patchedDependencies": {
       "@vitejs/plugin-vue2@2.2.0": "patches/@vitejs__plugin-vue2@2.2.0.patch"
+    },
+    "peerDependencyRules": {
+      "ignoreMissin": [
+        "eslint",
+        "prettier"
+      ]
     }
   }
 }

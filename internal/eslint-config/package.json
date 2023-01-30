@@ -1,0 +1,20 @@
+{
+  "name": "@demi-ui/eslint-config",
+  "//": "or you want publish this change to true",
+  "private": true,
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "eslint": "^8.0.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-define-config": "^1.14.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "vue-eslint-parser": "^9.1.0"
+  }
+}

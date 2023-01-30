@@ -1,19 +1,27 @@
-import Button from '../index.vue'
+import DButton from '../src/button.vue'
 import { mount } from '@vue/test-utils'
 
-test('mount component', async () => {
-  expect(Button).toBeTruthy()
+describe('Button', () => {
+  it('create', () => {
+    const wrapper = mount(DButton, { slots: { default: 'default slot' } })
 
-  const button = mount(Button)
+    expect(wrapper.text()).toContain('default slot')
 
-  expect(button.text()).toContain('count 0')
-  expect(button.html()).toMatchSnapshot()
+    expect(wrapper.html()).toMatchSnapshot()
+  })
 
-  await button.get('button').trigger('click')
+  it('type property work', () => {
+    /**
+     * @desc use deprecated `propsData` compatibility for `@vue/test-utils@1` & `@vue/test-utils@2`
+     * @todo create package to compatible w/ both v1 & v2
+     */
+    const wrapper = mount(DButton, {
+      propsData: {
+        type: 'primary',
+      },
+      slots: { default: 'default slot' },
+    })
 
-  expect(button.text()).toContain('count 1')
-
-  await button.get('button').trigger('click')
-
-  expect(button.text()).toContain('count 2')
+    expect(wrapper.classes()).toContain('d-button--primary')
+  })
 })

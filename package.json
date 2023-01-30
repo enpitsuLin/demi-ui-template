@@ -1,5 +1,9 @@
 {
   "name": "demi-ui-template",
+  "packageManager": "pnpm@7.3.0",
+  "engines": {
+    "node": ">=16"
+  },
   "private": true,
   "version": "0.0.0",
   "description": "A universal ui library template for vue2 & 3",
@@ -10,6 +14,7 @@
     "url": "https://github.com/enpitsuLin/demi-ui-template"
   },
   "scripts": {
+    "postinstall": "npx only-allow pnpm",
     "build": "pnpm run -C internal/build start",
     "build:type": "pnpm run -C packages/components type",
     "clean": "rm -rf dist",
@@ -19,7 +24,7 @@
     "typecheck": "pnpm run -C packages/components typecheck"
   },
   "keywords": [],
-  "author": "",
+  "author": "enpitsulin <enpitsulin@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "rimraf": "^4.1.2",

@@ -22,26 +22,6 @@ export const copyFiles = async () => {
   )
 }
 
-export const copyFullStyle = async () => {
-  const styleFiles = await glob('**/*.css', {
-    cwd: componentsRoot,
-  })
-
-  return Promise.all(
-    styleFiles
-      .map((fpath) => [
-        path.resolve(componentsRoot, fpath),
-        path.resolve(
-          libOutput,
-          'styles',
-          path.basename(fpath, '.css'),
-          path.basename(fpath)
-        ),
-      ])
-      .map(([src, dest]) => copySync(src, dest))
-  )
-}
-
 export const writePackages = async () => {
   const content = await readJSON(libPackage)
   content.scripts = {

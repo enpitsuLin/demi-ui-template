@@ -11,7 +11,7 @@ export default series(
   parallel(
     runTask('buildUniversalBundle'),
     runTask('buildUniversalModules'),
-    runTask('copyFullStyle'),
+    runTask('buildBundleStyle'),
     createTask('buildTypeDefinition', () => run('pnpm run build:type'))
   ),
   runTask('copyFiles'),

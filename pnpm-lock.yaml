@@ -41,6 +41,7 @@ importers:
       '@demi-ui/tsconfig': workspace:*
       '@esbuild-kit/cjs-loader': ^2.4.1
       '@pnpm/logger': ^5.0.0
+      '@rollup/plugin-alias': ^4.0.3
       '@rollup/plugin-commonjs': ^24.0.1
       '@rollup/plugin-node-resolve': ^15.0.1
       '@types/fs-extra': ^11.0.1
@@ -76,6 +77,7 @@ importers:
       '@demi-ui/tsconfig': link:../tsconfig
       '@esbuild-kit/cjs-loader': 2.4.1
       '@pnpm/logger': 5.0.0
+      '@rollup/plugin-alias': 4.0.3_rollup@3.12.0
       '@rollup/plugin-commonjs': 24.0.1_rollup@3.12.0
       '@rollup/plugin-node-resolve': 15.0.1_rollup@3.12.0
       '@types/fs-extra': 11.0.1
@@ -174,6 +176,17 @@ importers:
       vue-template-compiler: 2.7.14
       vue-tsc: 1.0.24
       vue2: /vue/2.7.14
+
+  packages/demi-ui:
+    specifiers:
+      fs-extra: ^11.1.0
+      mustache: ^4.2.0
+      vue-demi: ^0.13.11
+    dependencies:
+      fs-extra: 11.1.0
+      mustache: 4.2.0
+      vue-demi: 0.13.11
+    publishDirectory: ./release
 
 packages:
 
@@ -2387,6 +2400,19 @@ packages:
         optional: true
     dependencies:
       rollup: 3.11.0
+      slash: 4.0.0
+    dev: true
+
+  /@rollup/plugin-alias/4.0.3_rollup@3.12.0:
+    resolution: {integrity: sha512-ZuDWE1q4PQDhvm/zc5Prun8sBpLJy41DMptYrS6MhAy9s9kL/doN1613BWfEchGVfKxzliJ3BjbOPizXX38DbQ==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      rollup: 3.12.0
       slash: 4.0.0
     dev: true
 
@@ -5821,7 +5847,6 @@ packages:
       graceful-fs: 4.2.10
       jsonfile: 6.1.0
       universalify: 2.0.0
-    dev: true
 
   /fs-extra/7.0.1:
     resolution: {integrity: sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==}
@@ -6168,7 +6193,6 @@ packages:
 
   /graceful-fs/4.2.10:
     resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==}
-    dev: true
 
   /graceful-readlink/1.0.1:
     resolution: {integrity: sha512-8tLu60LgxF6XpdbK8OW3FA+IfTNBn1ZHGHKF4KQbEeSkajYw5PlYJcKluntgegDPTg8UkHjpet1T82vk6TQ68w==}
@@ -7176,7 +7200,6 @@ packages:
       universalify: 2.0.0
     optionalDependencies:
       graceful-fs: 4.2.10
-    dev: true
 
   /jsonparse/1.3.1:
     resolution: {integrity: sha512-POQXvpdL69+CluYsillJ7SUhKvytYjW9vG/GKpnf+xP8UWgYEM/RaMzHHofbALDiKbbP1W8UEYmgGl39WkPZsg==}
@@ -7931,6 +7954,11 @@ packages:
     dependencies:
       duplexer2: 0.0.2
     dev: true
+
+  /mustache/4.2.0:
+    resolution: {integrity: sha512-71ippSywq5Yb7/tVYyGbkBggbU8H3u5Rz56fH60jGFgr8uHwxs+aSKeqmluIVzM0m0kB7xQjKS6qPfd0b2ZoqQ==}
+    hasBin: true
+    dev: false
 
   /mute-stdout/1.0.1:
     resolution: {integrity: sha512-kDcwXR4PS7caBpuRYYBUz9iVixUk3anO3f5OYFiIPwK/20vCzKCHyKoulbiDY1S53zD2bxUpxN/IJ+TnXjfvxg==}
@@ -10373,7 +10401,6 @@ packages:
   /universalify/2.0.0:
     resolution: {integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==}
     engines: {node: '>= 10.0.0'}
-    dev: true
 
   /unset-value/1.0.0:
     resolution: {integrity: sha512-PcA2tsuGSF9cnySLHTLSh2qrQiJ70mn+r+Glzxv2TWZblxsxCC52BDlZoPCsz7STd9pN7EZetkWZBAvk4cgZdQ==}
@@ -10692,6 +10719,19 @@ packages:
       - supports-color
       - terser
     dev: true
+
+  /vue-demi/0.13.11:
+    resolution: {integrity: sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==}
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dev: false
 
   /vue-demi/0.13.11_vue@3.2.45:
     resolution: {integrity: sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==}

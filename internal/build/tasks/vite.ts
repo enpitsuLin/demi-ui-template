@@ -1,10 +1,14 @@
 import { componentsRoot, libOutput } from '@demi-ui/build-utils'
+import commonjs from '@rollup/plugin-commonjs'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
 import Vue from '@vitejs/plugin-vue'
 import Vue2 from '@vitejs/plugin-vue2'
 import { TaskFunction } from 'gulp'
 import { resolve } from 'path'
-import { build, type Plugin } from 'vite'
-import { createTask } from '../utils'
+import { rollup } from 'rollup'
+import esbuild from 'rollup-plugin-esbuild'
+import alias from '@rollup/plugin-alias'
+import { createTask, writeBundles } from '../utils'
 
 const vueDemiEntry = (version: 2 | 3) =>
   resolve(
@@ -13,36 +17,47 @@ const vueDemiEntry = (version: 2 | 3) =>
   )
 
 const buildBundle = async (version: 2 | 3) => {
-  const plugins: Plugin[] = [version === 2 ? Vue2() : Vue()]
-
-  return build({
-    build: {
-      rollupOptions: {
-        external: ['vue'],
-        treeshake: true,
-        output: {
-          exports: 'named',
-          globals: {
-            vue: 'Vue',
-          },
+  const bundle = await rollup({
+    input: resolve(componentsRoot, 'src', 'index.ts'),
+    plugins: [
+      version === 2 ? Vue2() : Vue(),
+      alias({
+        entries: [{ find: 'vue-demi', replacement: vueDemiEntry(version) }],
+      }),
+      nodeResolve({
+        extensions: ['.mjs', '.js', '.json', '.ts'],
+      }),
+      commonjs(),
+      esbuild({
+        sourceMap: true,
+        target: 'es2018',
+        loaders: {
+          '.vue': 'ts',
         },
-      },
-      lib: {
-        entry: resolve(componentsRoot, 'src', 'index.ts'),
-        name: 'DemiUI',
-        fileName: (format) => `index.${format === 'es' ? 'mjs' : 'js'}`,
-      },
-      outDir: resolve(libOutput, 'dist', `v${version}`),
-      emptyOutDir: false,
+      }),
+    ],
+    external: ['vue'],
+    treeshake: false,
+  })
+  return writeBundles(bundle, [
+    {
+      format: 'es',
+      dir: resolve(libOutput, 'dist', `v${version}`),
+      entryFileNames: 'index.mjs',
       sourcemap: true,
     },
-    plugins,
-    resolve: {
-      alias: {
-        'vue-demi': vueDemiEntry(version),
+    {
+      format: 'umd',
+      dir: resolve(libOutput, 'dist', `v${version}`),
+      name: 'DemiUI',
+      exports: 'named',
+      entryFileNames: 'index.js',
+      sourcemap: true,
+      globals: {
+        vue: 'Vue',
       },
     },
-  })
+  ])
 }
 
 export const buildUniversalBundle: TaskFunction = createTask(

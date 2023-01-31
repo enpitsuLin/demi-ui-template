@@ -9,6 +9,7 @@
     "@demi-ui/tsconfig": "workspace:*",
     "@esbuild-kit/cjs-loader": "^2.4.1",
     "@pnpm/logger": "^5.0.0",
+    "@rollup/plugin-alias": "^4.0.3",
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@types/fs-extra": "^11.0.1",

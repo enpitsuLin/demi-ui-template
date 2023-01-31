@@ -21,7 +21,7 @@ Fortunately, there was a Community solution a long time ago, [vue-demi](https://
 
 ### Github Template
 
-[使用该 template 创建仓库](https://github.com/enpitsuLin/demi-ui-template/generate)
+[Create a repo from this template on GitHub.](https://github.com/enpitsuLin/demi-ui-template/generate)
 
 ### Clone to local
 

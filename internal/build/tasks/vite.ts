@@ -8,7 +8,9 @@ import { resolve } from 'path'
 import { rollup } from 'rollup'
 import esbuild from 'rollup-plugin-esbuild'
 import alias from '@rollup/plugin-alias'
+import { getBabelOutputPlugin } from '@rollup/plugin-babel'
 import { createTask, writeBundles } from '../utils'
+import terser from '@rollup/plugin-terser'
 
 const vueDemiEntry = (version: 2 | 3) =>
   resolve(
@@ -20,7 +22,7 @@ const buildBundle = async (version: 2 | 3) => {
   const bundle = await rollup({
     input: resolve(componentsRoot, 'src', 'index.ts'),
     plugins: [
-      version === 2 ? Vue2() : Vue(),
+      (version === 2 ? Vue2 : Vue)({ isProduction: true }),
       alias({
         entries: [{ find: 'vue-demi', replacement: vueDemiEntry(version) }],
       }),
@@ -45,17 +47,32 @@ const buildBundle = async (version: 2 | 3) => {
       dir: resolve(libOutput, 'dist', `v${version}`),
       entryFileNames: 'index.mjs',
       sourcemap: true,
+      plugins: [terser()],
     },
     {
-      format: 'umd',
+      format: 'es',
       dir: resolve(libOutput, 'dist', `v${version}`),
-      name: 'DemiUI',
-      exports: 'named',
       entryFileNames: 'index.js',
       sourcemap: true,
-      globals: {
-        vue: 'Vue',
-      },
+      plugins: [
+        getBabelOutputPlugin({
+          allowAllFormats: true,
+          presets: [['@babel/preset-env', { targets: ['IE 11'] }]],
+          plugins: [
+            [
+              '@babel/plugin-transform-modules-umd',
+              {
+                globals: {
+                  vue: 'Vue',
+                },
+                exactGlobals: true,
+              },
+            ],
+          ],
+          moduleId: 'DemiUI',
+        }),
+        terser(),
+      ],
     },
   ])
 }

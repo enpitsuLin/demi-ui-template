@@ -1,4 +1,4 @@
 {
   "extends": "@demi-ui/tsconfig/node.json",
-  "include": ["glupfile.ts", "tasks", "utils"]
+  "include": ["glupfile.ts", "tasks", "utils", "constants.ts"]
 }

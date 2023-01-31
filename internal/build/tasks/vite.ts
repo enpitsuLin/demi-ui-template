@@ -11,6 +11,7 @@ import alias from '@rollup/plugin-alias'
 import { getBabelOutputPlugin } from '@rollup/plugin-babel'
 import { createTask, writeBundles } from '../utils'
 import terser from '@rollup/plugin-terser'
+import { LIB_CAMELCASE_NAME } from '../constants'
 
 const vueDemiEntry = (version: 2 | 3) =>
   resolve(
@@ -69,7 +70,7 @@ const buildBundle = async (version: 2 | 3) => {
               },
             ],
           ],
-          moduleId: 'DemiUI',
+          moduleId: LIB_CAMELCASE_NAME,
         }),
         terser(),
       ],
